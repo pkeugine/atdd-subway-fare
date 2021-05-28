@@ -19,6 +19,7 @@ public class AuthController {
         this.authService = authService;
     }
 
+    @Operation(summary = "Create login token")
     @PostMapping("/login/token")
     public ResponseEntity<TokenResponse> login(@RequestBody TokenRequest request) {
         TokenResponse token = authService.login(request);
